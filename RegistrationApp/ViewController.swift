@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var lbCollection: [UITextField]!
     @IBOutlet weak var lbUsername: UITextField!
@@ -20,14 +20,34 @@ class ViewController: UIViewController {
         lbCollection[0].isHidden = true
         lbCollection[1].isHidden = true
         lbCollection[2].isHidden = true
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(endEditing))
-        view.addGestureRecognizer(tap)
+        
+        self.view.addSubview(lbUsername)
+        self.view.addSubview(lbPassword)
+        self.view.addSubview(lbCollection[0])
+        self.view.addSubview(lbCollection[1])
+        self.view.addSubview(lbCollection[2])
+        self.lbUsername.delegate = self
+        self.lbPassword.delegate = self
+        self.lbCollection[0].delegate = self
+        self.lbCollection[1].delegate = self
+        self.lbCollection[2].delegate = self
+        
+        
+//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(endEditing))
+//        self.view.addGestureRecognizer(tap)
+        
     }
     
-    @objc func endEditing(){
-        self.view.endEditing(true)
+//    @objc func endEditing(){
+//        self.view.endEditing(true)
+//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
-
+    
     @IBAction func scAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             lbCollection[0].isHidden = true
@@ -48,9 +68,6 @@ class ViewController: UIViewController {
         lbCollection[2].text = nil
         lbUsername.text = nil
         lbPassword.text = nil
-    }
-    @IBAction func demissKeyboard(_ sender: UITextField) {
-        sender.resignFirstResponder()
     }
 }
 
