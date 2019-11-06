@@ -13,6 +13,7 @@
 		9B3C26FC237355170093FB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C26FA237355170093FB04 /* Main.storyboard */; };
 		9B3C26FE237355170093FB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C26FD237355170093FB04 /* Assets.xcassets */; };
 		9B3C2701237355170093FB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C26FF237355170093FB04 /* LaunchScreen.storyboard */; };
+		9B3C270A237355B30093FB04 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C2709237355B30093FB04 /* download.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9B3C26FD237355170093FB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B3C2700237355170093FB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3C2702237355170093FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B3C2709237355B30093FB04 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = ../../download.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		9B3C26E8237355170093FB04 = {
 			isa = PBXGroup;
 			children = (
+				9B3C27082373558E0093FB04 /* Images */,
 				9B3C26F3237355170093FB04 /* RegistrationApp */,
 				9B3C26F2237355170093FB04 /* Products */,
 			);
@@ -65,6 +68,14 @@
 				9B3C2702237355170093FB04 /* Info.plist */,
 			);
 			path = RegistrationApp;
+			sourceTree = "<group>";
+		};
+		9B3C27082373558E0093FB04 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9B3C2709237355B30093FB04 /* download.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +139,7 @@
 				9B3C2701237355170093FB04 /* LaunchScreen.storyboard in Resources */,
 				9B3C26FE237355170093FB04 /* Assets.xcassets in Resources */,
 				9B3C26FC237355170093FB04 /* Main.storyboard in Resources */,
+				9B3C270A237355B30093FB04 /* download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
