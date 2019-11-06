@@ -14,13 +14,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbUsername: UITextField!
     @IBOutlet weak var lbPassword: UITextField!
     @IBOutlet weak var btLogin: UIButton!
+    @IBOutlet weak var btRegister: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         lbCollection[0].isHidden = true
         lbCollection[1].isHidden = true
         lbCollection[2].isHidden = true
-        
+        btRegister.isHidden = true
         self.view.addSubview(lbUsername)
         self.view.addSubview(lbPassword)
         self.view.addSubview(lbCollection[0])
@@ -31,16 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.lbCollection[0].delegate = self
         self.lbCollection[1].delegate = self
         self.lbCollection[2].delegate = self
-        
-        
-//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(endEditing))
-//        self.view.addGestureRecognizer(tap)
-        
     }
-    
-//    @objc func endEditing(){
-//        self.view.endEditing(true)
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
@@ -53,21 +45,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
             lbCollection[0].isHidden = true
             lbCollection[1].isHidden = true
             lbCollection[2].isHidden = true
-            btLogin.setTitle("Login", for: .normal)
+            btRegister.isHidden = true
+            btLogin.isHidden = false
             
         } else {
             lbCollection[0].isHidden = false
             lbCollection[1].isHidden = false
             lbCollection[2].isHidden = false
-            btLogin.setTitle("Register", for: .normal)
+            btLogin.isHidden = true
+            btRegister.isHidden = false
         }
     }
     @IBAction func btLogin(_ sender: UIButton) {
-        lbCollection[0].text = nil
-        lbCollection[1].text = nil
-        lbCollection[2].text = nil
         lbUsername.text = nil
         lbPassword.text = nil
+    }
+    
+    @IBAction func btRegister(_ sender: UIButton) {
+        
+        if lbCollection[0].text == nil {
+            let alert = UIAlertController(title: "Check", message: "Please provide your first name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        if lbCollection[1].text == nil {
+            let alert = UIAlertController(title: "Check", message: "Please provide your last name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        if lbCollection[2].text == nil {
+            let alert = UIAlertController(title: "Check", message: "Please provide your e-mail", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        if lbUsername.text == nil {
+            let alert = UIAlertController(title: "Check", message: "Please provide your username", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        if lbPassword.text == nil {
+            let alert = UIAlertController(title: "Check", message: "Please provide your password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        if lbCollection[0].text != nil && lbCollection[1].text == nil && lbCollection[2].text == nil && lbUsername.text == nil && lbPassword.text == nil {
+            lbCollection[0].text = nil
+            lbCollection[1].text = nil
+            lbCollection[2].text = nil
+            lbUsername.text = nil
+            lbPassword.text = nil
+        }
     }
 }
 

@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Login"/>
-                                    <segment title="Sign up"/>
+                                    <segment title="New user"/>
                                 </segments>
                                 <connections>
                                     <action selector="scAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="WSE-3z-Hjd"/>
@@ -72,12 +72,25 @@
                                     <action selector="btLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDe-CT-bf8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWk-sQ-eVW">
+                                <rect key="frame" x="16" y="429" width="343" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXp-Mm-clB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="btLogin" destination="ZTh-gX-BhJ" id="teC-wH-aBa"/>
+                        <outlet property="btRegister" destination="qWk-sQ-eVW" id="iOU-RY-2aT"/>
                         <outlet property="lbPassword" destination="qIx-QP-m46" id="IlQ-Bo-jjU"/>
                         <outlet property="lbUsername" destination="n45-li-Ojs" id="FgL-Th-yPX"/>
                         <outletCollection property="lbCollection" destination="1ev-bf-Mgl" collectionClass="NSMutableArray" id="Uvb-LT-XTY"/>
